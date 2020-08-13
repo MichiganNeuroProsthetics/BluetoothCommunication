@@ -1,0 +1,6 @@
+This code is for the testing of sending data from a laptop (Mac) to an Arduino Bluetooth device.
+
+
+The code for the Mac is a Processing pde file which should be run within the Processing IDE (download page: https://processing.org/download/). The code creates and simple GUI which allows the user to send an On/Off signal message to the connected BT device (the Arduino board) 
+
+The code for the Bluetooth device is Arduino code which attempts to connect to and receive data from data a connected host (the Mac). The Arduino board should turn its on-board LED On/Off upon receiving (via Bluetooth) the corresponding message from the host.

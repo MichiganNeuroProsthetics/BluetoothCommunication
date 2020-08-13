@@ -1,0 +1,5 @@
+This code is for the testing of sending data from a Bluetooth device to a laptop (Mac).
+
+The code for the Bluetooth device is Arduino code which reads data from an Analog sensor and attempts to transmit the data to a connected host.
+
+The code for the Mac is also an Arduino file which should be run within the Arduino IDE while connected to the port which the Arduino Bluetooth module is communicating with it on (as mentioned in the code file). If running correctly in the IDE, the serial Monitor should display the data the Mac is receiving from the Arduino.
