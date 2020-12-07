@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B94F31F3257DDDC200FB8C0C /* ControlCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94F31F2257DDDC200FB8C0C /* ControlCenter.storyboard */; };
+		B94F31F8257DDDCF00FB8C0C /* PizzaButton.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94F31F7257DDDCF00FB8C0C /* PizzaButton.storyboard */; };
+		B94F31FD257DDDE100FB8C0C /* UpdateArm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94F31FC257DDDE100FB8C0C /* UpdateArm.storyboard */; };
+		B94F3202257DDDEF00FB8C0C /* DataAnalytics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B94F3201257DDDEF00FB8C0C /* DataAnalytics.storyboard */; };
 		B9F572D724C377F4004BF3B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F572D624C377F4004BF3B4 /* AppDelegate.swift */; };
 		B9F572D924C377F4004BF3B4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F572D824C377F4004BF3B4 /* SceneDelegate.swift */; };
 		B9F572DB24C377F4004BF3B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F572DA24C377F4004BF3B4 /* ViewController.swift */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B94F31F2257DDDC200FB8C0C /* ControlCenter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ControlCenter.storyboard; sourceTree = "<group>"; };
+		B94F31F7257DDDCF00FB8C0C /* PizzaButton.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PizzaButton.storyboard; sourceTree = "<group>"; };
+		B94F31FC257DDDE100FB8C0C /* UpdateArm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UpdateArm.storyboard; sourceTree = "<group>"; };
+		B94F3201257DDDEF00FB8C0C /* DataAnalytics.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DataAnalytics.storyboard; sourceTree = "<group>"; };
 		B9F572D324C377F4004BF3B4 /* blue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F572D624C377F4004BF3B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9F572D824C377F4004BF3B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +86,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B94F31F1257DDD6700FB8C0C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B9F572E424C377FA004BF3B4 /* LaunchScreen.storyboard */,
+				B9F572DC24C377F4004BF3B4 /* Main.storyboard */,
+				B94F31F2257DDDC200FB8C0C /* ControlCenter.storyboard */,
+				B94F31F7257DDDCF00FB8C0C /* PizzaButton.storyboard */,
+				B94F31FC257DDDE100FB8C0C /* UpdateArm.storyboard */,
+				B94F3201257DDDEF00FB8C0C /* DataAnalytics.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		B9F572CA24C377F4004BF3B4 = {
 			isa = PBXGroup;
 			children = (
@@ -101,12 +122,11 @@
 		B9F572D524C377F4004BF3B4 /* blue */ = {
 			isa = PBXGroup;
 			children = (
+				B94F31F1257DDD6700FB8C0C /* Storyboards */,
 				B9F572D624C377F4004BF3B4 /* AppDelegate.swift */,
 				B9F572D824C377F4004BF3B4 /* SceneDelegate.swift */,
 				B9F572DA24C377F4004BF3B4 /* ViewController.swift */,
-				B9F572DC24C377F4004BF3B4 /* Main.storyboard */,
 				B9F572E224C377FA004BF3B4 /* Assets.xcassets */,
-				B9F572E424C377FA004BF3B4 /* LaunchScreen.storyboard */,
 				B9F572E724C377FA004BF3B4 /* Info.plist */,
 				B9F572DF24C377F4004BF3B4 /* blue.xcdatamodeld */,
 			);
@@ -235,9 +255,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B94F31F8257DDDCF00FB8C0C /* PizzaButton.storyboard in Resources */,
 				B9F572E624C377FA004BF3B4 /* LaunchScreen.storyboard in Resources */,
+				B94F31FD257DDDE100FB8C0C /* UpdateArm.storyboard in Resources */,
+				B94F31F3257DDDC200FB8C0C /* ControlCenter.storyboard in Resources */,
 				B9F572E324C377FA004BF3B4 /* Assets.xcassets in Resources */,
 				B9F572DE24C377F4004BF3B4 /* Main.storyboard in Resources */,
+				B94F3202257DDDEF00FB8C0C /* DataAnalytics.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
