@@ -9,27 +9,44 @@
 import UIKit
 import CoreBluetooth
 
+var successful = false
+var myPeripheral: CBPeripheral!
+
 class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
     var centralManager: CBCentralManager!
-    var myPeripheral: CBPeripheral!
-    var On:Bool!
+
+    @IBOutlet weak var Switch: UISwitch!
     
-    @IBOutlet weak var State: UILabel!
-    @IBAction func ButtonConnect(_ sender: Any) {
-        On = true
+    @IBAction func Switch(_ sender: UISwitch){
+        if sender.isOn == false{
+            if successful == true{
+                centralManager.cancelPeripheralConnection(myPeripheral)
+                myPeripheral = nil
+                successful = false
+            }
+            else{
+                let alert = UIAlertController(title: "Bluetooth error", message: "Bluetooth doesn't seem to be connecting. Please make sure your arm is on and bluetooth is turned on in settings. Please try again in some time.", preferredStyle: .alert)
+                let okay = UIAlertAction(title: "Okay", style: .default){
+                    (action) in print(action)
+                }
+                alert.addAction(okay);
+                present(alert, animated: true, completion: nil)
+            }
+        }
+        else{
+            if successful == false{
+                centralManager.scanForPeripherals(withServices: nil, options: nil)
+            }
+        }
     }
-    
-    @IBAction func ButtonDisconnect(_ sender: Any) {
-        On = false
-        centralManager.cancelPeripheralConnection(myPeripheral)
-        State.text = "Disconnected from BLE"
-    }
-    
+
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == CBManagerState.poweredOn {
             print("BLE powered on")
             // Turned on
-            central.scanForPeripherals(withServices: nil, options: nil)
+            if successful == false{
+                central.scanForPeripherals(withServices: nil, options: nil)
+            }
         }
         else {
             print("Something wrong with BLE ")
@@ -42,28 +59,30 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
          if we want our app to automatically connect to one device we need to find the BLE module's name and make
          pname equal to that name in the if statement.
         */
-        if On == true{
+        if successful == false{
             if let pname = peripheral.name{
                 // change this to the name of the BLE module
-                if pname == "Earth’s MacBook Pro" {
+                if pname == "BT05" {
                     self.centralManager.stopScan()
                     
-                    self.myPeripheral = peripheral
-                    self.myPeripheral.delegate = self
+                    myPeripheral = peripheral
+                    myPeripheral.delegate = self
                 
                     self.centralManager.connect(peripheral, options: nil)
-                    State.text = "Connected to: " + pname
+                    print("Connected to: " + pname)
+                    successful = true
                 }
                 print(pname)
             }
         }
-        else{
-            State.text = "Not Connected to anything."
-        }
     }
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
-        self.myPeripheral.discoverServices(nil)
+        myPeripheral.discoverServices(nil)
     }
+    
+    func peripheral(_ peripheral: CBPeripheral,
+           didUpdateValueFor characteristic: CBCharacteristic,
+           error: Error?){}
     
     
     
